@@ -34,14 +34,14 @@ img {
 .list-group-item {
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .card {
-    width: 80%;
+    width: 78%;
   }
 }
 @media (max-width: 420px) {
   .card {
-    width: 95%;
+    width: 90%;
   }
 }
 @media (prefers-color-scheme: dark) { 
