@@ -8,43 +8,86 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* 确保body至少占满整个视口高度 */
+  min-height: 100vh;
   color: #2a2b2c;
   background-color: #ebedee;
-  padding: 20px; /* 添加一些内边距 */
+  padding: 20px;
 }
 
 .d-flex {
   width: 100%;
-  max-width: 1400px; /* 限制最大宽度 */
-  justify-content: center; /* 居中对齐 */
+  max-width: 1400px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* 卡片响应式样式 */
+img {
+  width: auto;
+  max-width: 100%;
+}
+
+/* 卡片基础样式 */
 .card {
   background-color: transparent;
-  width: 100%; /* 默认宽度100% */
-  max-width: 100%; /* 确保不会溢出父容器 */
-  margin: 10px; /* 调整外边距 */
+  width: 100%;
+  max-width: 100%;
+  margin: 10px;
+}
+
+/* 输入组样式 */
+.input-group {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.input-group-text {
+  white-space: nowrap;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  cursor: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 按钮样式 */
+.btn {
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.img-thumbnail {
+  max-height: 320px;
+}
+
+.list-group-item {
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* 移动端样式 */
 @media screen and (max-width: 768px) {
-  .card {
-    margin: 10px 0; /* 减小移动端边距 */
-  }
-  
-  .input-group {
-    flex-direction: column;
-  }
-  
-  .input-group > * {
-    width: 100%;
-    margin-bottom: 5px;
-  }
-  
   body {
-    padding: 10px; /* 减小移动端内边距 */
+    padding: 10px;
+  }
+
+  .card {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .input-group {
+    gap: 5px;
+  }
+
+  .input-group > .btn {
+    width: auto;
   }
 }
 
@@ -62,24 +105,35 @@ body {
   }
 }
 
-/* 保持其他样式不变 */
-.form-control {
-  cursor: auto;
-}
-
-.img-thumbnail {
-  max-height: 320px;
+/* 列表组样式 */
+.list-group {
+  width: 100%;
 }
 
 .list-group-item {
-  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+  margin-bottom: 0.5rem;
 }
 
-/* 优化输入组样式 */
-.input-group {
-  margin-bottom: 1rem;
+/* 模态框样式 */
+.modal-dialog {
+  margin: 1.75rem auto;
 }
 
-.input-group-text {
-  white-space: nowrap;
+.modal-content {
+  border-radius: 0.3rem;
+}
+
+/* 卡片页脚样式 */
+.card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* 其他辅助类 */
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
