@@ -20,21 +20,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-.btn {
-  white-space: normal; /* 允许文字换行 */
-  height: auto; /* 自适应高度 */
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.2;
-}
 
-/* 在移动端可以使用更小的字体 */
-@media screen and (max-width: 768px) {
-  .btn {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-}
 img {
   width: auto;
   max-width: 100%;
@@ -51,13 +37,15 @@ img {
 /* 输入组样式 */
 .input-group {
   width: 100%;
-  margin-bottom: 1rem;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 5px;
+  flex-wrap: wrap; /* 允许按钮换行 */
+  gap: 5px; /* 按钮之间的间距 */
 }
 
+.btn {
+  flex: 0 1 auto; /* 允许按钮收缩但不伸展 */
+  margin-bottom: 5px; /* 按钮换行后的垂直间距 */
+}
 .input-group-text {
   white-space: nowrap;
   width: auto;
@@ -71,11 +59,7 @@ img {
   min-width: 0;
 }
 
-/* 按钮样式 */
-.btn {
-  white-space: nowrap;
-  min-width: fit-content;
-}
+
 
 .img-thumbnail {
   max-height: 320px;
@@ -97,11 +81,14 @@ img {
   }
 
   .input-group {
-    gap: 5px;
+    gap: 8px; /* 在移动端可以增加一点间距 */
   }
-
-  .input-group > .btn {
-    width: auto;
+  
+  .btn {
+    width: calc(33.33% - 8px); /* 让每个按钮占据三分之一宽度，减去间距 */
+    white-space: normal; /* 允许按钮文字换行 */
+    height: auto; /* 自适应高度 */
+    min-height: 38px; /* 设置最小高度确保按钮不会太扁 */
   }
 }
 
