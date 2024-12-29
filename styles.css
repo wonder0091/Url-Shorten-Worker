@@ -35,16 +35,20 @@ img {
 }
 
 /* 输入组样式 */
+
 .input-group {
   width: 100%;
+  margin-bottom: 1rem;
   display: flex;
-  flex-wrap: wrap; /* 允许按钮换行 */
-  gap: 5px; /* 按钮之间的间距 */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
 }
 
+/* 按钮样式 */
 .btn {
-  flex: 0 1 auto; /* 允许按钮收缩但不伸展 */
-  margin-bottom: 5px; /* 按钮换行后的垂直间距 */
+  white-space: nowrap;
+  min-width: fit-content;
 }
 .input-group-text {
   white-space: nowrap;
@@ -81,14 +85,11 @@ img {
   }
 
   .input-group {
-    gap: 8px; /* 在移动端可以增加一点间距 */
+    gap: 5px;
   }
-  
-  .btn {
-    width: calc(33.33% - 8px); /* 让每个按钮占据三分之一宽度，减去间距 */
-    white-space: normal; /* 允许按钮文字换行 */
-    height: auto; /* 自适应高度 */
-    min-height: 38px; /* 设置最小高度确保按钮不会太扁 */
+
+  .input-group > .btn {
+    width: auto;
   }
 }
 
