@@ -3,53 +3,83 @@
   padding: 0;
   cursor: default;
 }
-body {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  vertical-align: center;
-  flex-wrap: wrap;
-  align-content: center;
 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 确保body至少占满整个视口高度 */
   color: #2a2b2c;
   background-color: #ebedee;
+  padding: 20px; /* 添加一些内边距 */
 }
-img {
-  width: auto;
-  max-width: 100%;
+
+.d-flex {
+  width: 100%;
+  max-width: 1400px; /* 限制最大宽度 */
+  justify-content: center; /* 居中对齐 */
 }
+
+/* 卡片响应式样式 */
 .card {
   background-color: transparent;
-  width: 768px;
+  width: 100%; /* 默认宽度100% */
+  max-width: 100%; /* 确保不会溢出父容器 */
+  margin: 10px; /* 调整外边距 */
 }
+
+/* 移动端样式 */
+@media screen and (max-width: 768px) {
+  .card {
+    margin: 10px 0; /* 减小移动端边距 */
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group > * {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  body {
+    padding: 10px; /* 减小移动端内边距 */
+  }
+}
+
+/* 平板端样式 */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    width: 700px;
+  }
+}
+
+/* 桌面端样式 */
+@media screen and (min-width: 1025px) {
+  .card {
+    width: 1000px;
+  }
+}
+
+/* 保持其他样式不变 */
 .form-control {
   cursor: auto;
 }
+
 .img-thumbnail {
   max-height: 320px;
 }
+
 .list-group-item {
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-@media (max-width: 768px) {
-  .card {
-    width: 78%;
-  }
+
+/* 优化输入组样式 */
+.input-group {
+  margin-bottom: 1rem;
 }
-@media (max-width: 420px) {
-  .card {
-    width: 90%;
-  }
+
+.input-group-text {
+  white-space: nowrap;
 }
-@media (prefers-color-scheme: dark) { 
-  body {
-    color: #d9d9d9; 
-    background: #1b1b1b;
-  }
-  .card {
-    background-color: #252d38;
-  }
-} 
