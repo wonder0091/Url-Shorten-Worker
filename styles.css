@@ -20,7 +20,21 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
+.btn {
+  white-space: normal; /* 允许文字换行 */
+  height: auto; /* 自适应高度 */
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.2;
+}
 
+/* 在移动端可以使用更小的字体 */
+@media screen and (max-width: 768px) {
+  .btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
 img {
   width: auto;
   max-width: 100%;
