@@ -73,7 +73,8 @@ img {
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-/* 移动端样式 */
+/* 移动端适配 */
+
 @media screen and (max-width: 768px) {
   body {
     padding: 10px;
@@ -91,6 +92,11 @@ img {
   .input-group > .btn {
     width: auto;
   }
+  .btn-danger, .btn-info, .btn-success {
+    flex: 1 1 100%; /* 让按钮占据整个行宽 */
+    margin-bottom: 8px; /* 添加按钮之间的间距 */
+  }
+
 }
 
 /* 平板端样式 */
